@@ -10,12 +10,17 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
+feed() {
+    if [ -n "$3" ] ;then
+        echo "src-git $1 $2;$3" >>feeds.conf.default
+    else
+        echo "src-git $1 $2" >>feeds.conf.default
+    fi
+}
+
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-
-echo 'src-git openclash https://github.com/vernesong/OpenClash' >>feeds.conf.default
-echo 'src-git alist https://github.com/sbwml/luci-app-alist' >>feeds.conf.default
+feed nuexini https://github.com/NueXini/NueXini_Packages.git
+feed kiddin9 https://github.com/kiddin9/openwrt-packages.git
