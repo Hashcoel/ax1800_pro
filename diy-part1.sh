@@ -18,3 +18,4 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 echo 'src-git openclash https://github.com/vernesong/OpenClash' >>feeds.conf.default
+echo 'src-git alist https://github.com/sbwml/luci-app-alist' >>feeds.conf.default
